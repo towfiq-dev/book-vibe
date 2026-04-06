@@ -1,10 +1,11 @@
 import React from 'react';
 import { CiStar } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
-  const {bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing} = book
+  const {bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing, bookId} = book
   return (
-    <div className='border border-black rounded-xl p-4'>
+    <Link to={`/bookDetails/${bookId}`} className='border border-black rounded-xl p-4'>
       <div className='bg-base-300 py-4 rounded-xl grid justify-center'>
       <img className='w-30 h-45' src={image} alt="" />
       </div>
@@ -29,7 +30,7 @@ const Book = ({book}) => {
       </span>
       </div>
 
-    </div>
+    </Link>
   );
 };
 

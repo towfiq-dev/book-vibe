@@ -6,6 +6,7 @@ const booksFetch = async()=>{
   return booksRes.json()
 }
 const HomePages = () => {
+  
   const booksPromise = booksFetch()
   return (
     <div>
