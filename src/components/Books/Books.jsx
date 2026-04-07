@@ -1,11 +1,10 @@
 import React from 'react';
 import { CiStar } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
-
-const Book = ({book}) => {
-  const {bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing, bookId} = book
+const Books = ({books}) => {
+  const {bookName, author, image, rating, category, tags, bookId} = books
   return (
-    <Link to={`/bookDetails/${bookId}`} className='border border-black rounded-xl p-4'>
+    <Link to={`bookDetails/${bookId}`} className='border border-black rounded-xl p-4'>
       <div className='bg-base-300 py-4 rounded-xl grid justify-center'>
       <img className='w-30 h-45' src={image} alt="" />
       </div>
@@ -26,7 +25,7 @@ const Book = ({book}) => {
       <p className='font-bold'>{category}</p>
       <span className='flex items-center text-[18px] font-semibold'>
       <h3>{rating}</h3>
-      <CiStar className='text-[25px]' />
+      <CiStar className='text-[25px] cursor-pointer'/>
       </span>
       </div>
 
@@ -34,4 +33,4 @@ const Book = ({book}) => {
   );
 };
 
-export default Book;
+export default Books;

@@ -1,7 +1,7 @@
 import React from 'react';
-import BannerImg from '../../../assets/images/banner.png'
+import BannerImg from '../../assets/images/banner.png'
 const Banner = () => {
-  return (
+return (
     <div className="flex justify-center mt-10 max-w-300 mx-auto">
   <div className="hero-content flex-col lg:flex-row-reverse gap-40 bg-base-300 px-15 py-15 rounded-xl w-full">
     <img

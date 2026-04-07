@@ -1,19 +1,13 @@
 import React from 'react';
-import NavLogo from '../../../assets/images/navlogo.png'
 import { Link, NavLink } from 'react-router-dom';
+import NavLogo from '../../assets/images/navlogo.png'
 const Navbar = () => {
   const links = (
-    <div className='flex gap-4'>
-    <li>
-      <NavLink to={'/'} className={({isActive})=> `font-semibold ${isActive === true? 'text-green-500 border-green-500 border-2' : ''}`}>Home</NavLink>
-      </li>
-    <li>
-      <NavLink to={'/books'} className={({isActive})=> `font-semibold ${isActive === true? 'text-green-500 border-green-500 border-2' : ''}`}>Listed Books</NavLink>
-      </li>
-    <li>
-      <NavLink to={'/Pages-to-read'} className={({isActive})=> `font-semibold ${isActive === true? 'text-green-500 border-green-500 border-2' : ''}`}>Pages to Read</NavLink>
-      </li>
-    </div>
+  <div className='flex gap-6'>
+  <li> <NavLink className={({isActive})=> isActive === true? 'border border-green-500 text-green-500' : ''} to={'/'}>Home</NavLink> </li>
+  <li> <NavLink className={({isActive})=> isActive === true? 'border border-green-500 text-green-500' : ''} to={'/ListedBooks'}>Listed Books</NavLink> </li>
+  <li> <NavLink className={({isActive})=> isActive === true? 'border border-green-500 text-green-500' : ''} to={'/pagesToRead'}>Pages to Read</NavLink> </li>
+  </div>
   )
   return (
   <header className='mt-5'>
