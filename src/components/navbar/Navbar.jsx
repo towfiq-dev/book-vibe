@@ -10,7 +10,7 @@ const Navbar = () => {
   </div>
   )
   return (
-  <header className='mt-5'>
+  <header className="bg-base-100 py-2 sticky top-0 z-50 shadow-sm">
   <nav className="navbar max-w-310 mx-auto px-4">
   <div className="navbar-start max-w-310 mx-auto">
     <div className="dropdown">

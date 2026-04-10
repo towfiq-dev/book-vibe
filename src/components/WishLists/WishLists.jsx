@@ -7,10 +7,12 @@ import { CiLocationOn } from 'react-icons/ci';
 
 const WishLists = ({sortingType}) => {
   const wishListBooksReceived = useContext(BookContext)
-  const {wishListBooks} = wishListBooksReceived
+  const {wishListBooks, handleRemoveWish} = wishListBooksReceived
   const [filteredWishList, setFilteredWishList] = useState(wishListBooks)
+
   useEffect(()=>{
     let sortedData = [...wishListBooks]
+
     if (sortingType === 'Pages') {
       sortedData.sort((a, b)=> a.totalPages-b.totalPages)
       setFilteredWishList(sortedData)
@@ -23,6 +25,11 @@ const WishLists = ({sortingType}) => {
       sortedData.sort((a,b)=> a.bookName.localeCompare(b.bookName))
       setFilteredWishList(sortedData)
     }
+
+    else {
+    setFilteredWishList(wishListBooks);
+  }
+
   },[sortingType, wishListBooks])
   if (filteredWishList.length === 0) {
     return(
@@ -31,6 +38,7 @@ const WishLists = ({sortingType}) => {
     </div>
     )
   }
+  
   return (
     <div className='flex flex-col gap-6 mt-8'>
       {
@@ -87,6 +95,7 @@ const WishLists = ({sortingType}) => {
                       View Details
                     </button>
                   </Link>
+                  <button onClick={() => handleRemoveWish(wishList.bookId)} className='btn bg-red-500 text-white rounded-full px-6 border-none'>Remove</button>
                 </div>
               </div>
             </div>

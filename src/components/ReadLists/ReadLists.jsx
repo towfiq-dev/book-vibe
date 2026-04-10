@@ -7,9 +7,9 @@ import { CiLocationOn } from 'react-icons/ci';
 
 const ReadLists = ({sortingType}) => {
   const readListBooksReceived = useContext(BookContext)
-  const {readListBooks} = readListBooksReceived
+  const {readListBooks, handleRemoveFromReadList} = readListBooksReceived
   const [filteredReadList, setFilteredReadList] = useState(readListBooks)
-  
+
   useEffect(() => {
   let sortedData = [...readListBooks];
 
@@ -93,6 +93,7 @@ const ReadLists = ({sortingType}) => {
                       View Details
                     </button>
                   </Link>
+                  <button onClick={() => handleRemoveFromReadList(readList.bookId)} className='btn bg-red-500 text-white rounded-full px-6 border-none'>Remove</button>
                 </div>
               </div>
             </div>
